@@ -1,0 +1,34 @@
+.grid-block2 {
+  margin: 80px 0;
+  & .content-box {
+    grid-template-columns: repeat(2, 1fr);
+    & .box:first-child {
+      display: grid;
+      grid-template-rows: auto;
+      height: fit-content;
+      width: 100%;
+      & .aboutus-btn {
+        justify-self: center;
+      }
+      & div {
+        margin: 1vw 0;
+      }
+    }
+    & .aboutus-page-img {
+      width: 40vw;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .grid-block2 {
+    margin: 50px 0;
+    .content-box {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 0px;
+      & .aboutus-page-img {
+        width: 100%;
+      }
+    }
+  }
+}

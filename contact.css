@@ -1,0 +1,94 @@
+.google-map {
+  & iframe {
+    width: 100%;
+    height: 38vw;
+  }
+}
+.grid-block2 {
+  margin: 80px 0;
+  & .content-box {
+    grid-template-columns: minmax(250px, 1fr) 2fr;
+    & .box:first-child {
+      display: grid;
+      grid-template-rows: auto;
+      justify-content: center;
+      align-items: center;
+      & div {
+        margin: 5px 0;
+      }
+      & .address {
+        display: flex;
+        flex-direction: row;
+        & .bx {
+          font-size: 60px;
+          color: #3280c0;
+        }
+        & .detail {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  & .input-field {
+    position: relative;
+    margin: 20px auto;
+    max-width: 40vw;
+    display: flex;
+    justify-content: center;
+  }
+  & .input-field input,
+  textarea {
+    cursor: default;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border: 1px solid rgba(51, 51, 51, 0.3);
+    color: #000000;
+  }
+  & .input-field label {
+    color: #000000;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+  }
+  & .input-field :is(input:focus, textarea:focus) ~ label {
+    transform: translateY(-100%) scale(0.9);
+    border: none;
+  }
+}
+@media (min-width: 768px) {
+  .content-box {
+    & .box:last-child {
+      padding-top: 10px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .grid-block2 {
+    margin: 50px 0;
+    .content-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      & .box {
+        width: 100%;
+      }
+      & .box:first-child {
+        display: grid;
+        grid: repeat(2, 60px);
+      }
+      & .address {
+        justify-content: center;
+      }
+    }
+
+    & .input-field {
+      max-width: 100%;
+    }
+  }
+}
